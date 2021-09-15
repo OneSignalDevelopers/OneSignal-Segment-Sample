@@ -5,3 +5,12 @@ Event-based push notifications are a great way to stay connected with your custo
 ## Prerequisites
 * OneSignal account
 * Segment account
+
+## Building this project
+
+1. Create a file named `env.local` for environment variables
+    * `SEGMENT_WRITE_KEY`
+    * `NEXT_PUBLIC_ONESIGNAL_APP_ID`
+    * `NEXT_PUBLIC_ONESIGNAL_API_KEY`
+2. Run `yarn` to install dependencies
+3. Start the app `yarn dev`
