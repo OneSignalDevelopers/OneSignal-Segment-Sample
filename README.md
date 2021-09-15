@@ -17,7 +17,7 @@ Note that this project makes use of OneSignal's Mailgun integration to send an e
 2. Run `yarn` to install dependencies
 3. Start the app `yarn dev`
 
-## How this sample works
+## How it works
 
 The purpose of this sample application is to demonstrate how one can implement event-driven notifications with OneSignal. It works by splitting user onboarding into two primary steps.
 
