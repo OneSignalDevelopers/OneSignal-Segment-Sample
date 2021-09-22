@@ -25,15 +25,8 @@ This stage is demonstrates a typical user onboarding _after_ the user account ha
 This step marks the completion of new user registration. It's at this point where the notification email is be sent.
 
 
-## Prerequisites
 
-If you would like to run this sample, you will need 
-
-* A OneSignal account ([create one](#))
-* A Segment account ([create one](#))
-* A Mailgun account ([create one](#)))
-
-### OneSignal Setup
+## OneSignal Setup
 
 Navigate to your OneSignal dashboard and click the **New App/Website** button.
 
@@ -72,11 +65,23 @@ Once you’ve successfully added your source, you will be presented with the Ove
 
 ![Screen Shot 2021-09-22 at 12 59 06 PM](https://user-images.githubusercontent.com/1715082/134397365-2f2ff958-eded-4429-9471-17550583ba02.png)
 
+
+
 ## Building this project
 
-1. Create a file named `env.local` and add environment variables:
+###### Prerequisites
+
+If you would like to run this sample, you will need 
+
+* A OneSignal account ([create one](#))
+* A Segment account ([create one](#))
+* A Mailgun account ([create one](#)))
+* An env file named `env.local` with the variables:
     * `SEGMENT_WRITE_KEY`
     * `NEXT_PUBLIC_ONESIGNAL_APP_ID`
     * `NEXT_PUBLIC_ONESIGNAL_API_KEY`
-2. Install dependencies by running `yarn`
-3. Start the app `yarn dev`
+
+###### Starting the app
+
+1. Install dependencies by running `yarn`
+2. Start the app `yarn dev`
