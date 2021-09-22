@@ -6,7 +6,7 @@ The purpose of this sample application is to demonstrate how one can implement e
 2. Onboarding
 3. Welcome
 
-###### Signup
+#### Signup
 
 This stage is the end-users first touch point with the app. Upon entering an email address, a request is sent to the backing API.
 1. Create a new user account
@@ -14,13 +14,13 @@ This stage is the end-users first touch point with the app. Upon entering an ema
 
 If successful, the new user ID is returned to the client and `setExternalUserId` is called with the new ID. This results in Segment receiving a new event that it then forwards to OneSignal.
 
-###### Onboard
+#### Onboard
 
 This stage is demonstrates a typical user onboarding _after_ the user account has been created. You can think of this step as an in-between step that ensures your application has all the information it needs to move forward and for the end-user to get acquianted with the application. In this example, I collect an email before making a request to the backing API.
 * Update the user account with onboarding details (not implemented)
 * Send an `onboarded` event via Segment's `track` function
 
-###### Welcome
+#### Welcome
 
 This step marks the completion of new user registration. It's at this point where the notification email is be sent.
 
