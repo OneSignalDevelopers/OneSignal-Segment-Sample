@@ -64,10 +64,13 @@ Click the **Add Source** button from the modal window upon which you will be tak
 
 ![Screen Shot 2021-09-22 at 10 40 25 AM](https://user-images.githubusercontent.com/1715082/134388638-9df84c2f-8047-47e8-9bdf-4e87e87154f0.png)
 
-Provide a name for your source then click the **Add Source** button to complete the source setup and be taken to the overview of your newly created source.
+Provide a name for your source then click the **Add Source** button to complete the source setup.
 
 ![Screen Shot 2021-09-22 at 10 41 25 AM](https://user-images.githubusercontent.com/1715082/134389017-589f74c1-2ac2-4225-9292-268905e9a2f6.png)
 
+Once you’ve successfully added your source, you will be presented with the Overview for your newly created source. From here, you will have access to your Write Key which we will use in our application. 
+
+![Screen Shot 2021-09-22 at 12 59 06 PM](https://user-images.githubusercontent.com/1715082/134397365-2f2ff958-eded-4429-9471-17550583ba02.png)
 
 ## Building this project
 
