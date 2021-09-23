@@ -25,7 +25,6 @@ This stage is demonstrates a typical user onboarding _after_ the user account ha
 This step marks the completion of new user registration. It's at this point where the notification email is be sent.
 
 
-
 ## OneSignal Setup
 
 Navigate to your OneSignal dashboard and click the **New App/Website** button.
@@ -61,11 +60,25 @@ Provide a name for your source then click the **Add Source** button to complete 
 
 ![Screen Shot 2021-09-22 at 10 41 25 AM](https://user-images.githubusercontent.com/1715082/134389017-589f74c1-2ac2-4225-9292-268905e9a2f6.png)
 
-Once you’ve successfully added your source, you will be presented with the Overview for your newly created source. From here, you will have access to your Write Key which we will use in our application. 
+Once you’ve successfully added your source, you will be presented with the **Overview** for your newly created source. From here, you will have access to your **Write Key** which we will use in our app. 
 
 ![Screen Shot 2021-09-22 at 12 59 06 PM](https://user-images.githubusercontent.com/1715082/134397365-2f2ff958-eded-4429-9471-17550583ba02.png)
 
+To complete the Segment integration with OneSignal, we need to add a Segment destination. You can accomplish this by navigating to the **Destinations** page and clicking the **Add Destination** button; however, going this route requires a couple of manual steps. To simplify this process, we can use OneSignal to set up the destination in Segment.
 
+Navigate to your OneSignal app’s **Settings**, select the **Analytics** from the submenu, then click the **Activate** button within the _Segment.com_ card. Note that you may be requested to log in to your Segment account.
+
+![Screen Shot 2021-09-23 at 12 42 53 PM](https://user-images.githubusercontent.com/1715082/134559889-7d679865-463d-497c-afa9-85c07b22027b.png)
+
+You will be prompted to select the Segment workspace and source for which you’d like to add a OneSignal _destination_. Once your selections have been made, click the **Allow** button. 
+
+![Screen Shot 2021-09-23 at 12 49 23 PM](https://user-images.githubusercontent.com/1715082/134559963-6792af85-950f-4a86-955b-bfc806f75bc8.png)
+
+Upon completion, you will have a new _destination_ configured in Segment.
+
+![Screen Shot 2021-09-23 at 12 52 59 PM](https://user-images.githubusercontent.com/1715082/134560010-3d92fc0b-78e8-4f5b-887f-89dcb9b23ec3.png)
+
+Now that we’ve configured the Segment integration, we can add the final piece needed for this use-case: email delivery. This guide uses the OneSignal Mailgun integration to deliver email. Email setup is outside the scope of this guide; however, setup is a straightforward process and you can find instructions on integrating with Mailgun in our [docs](https://documentation.onesignal.com/docs/mailgun-setup).
 
 ## Building this project
 
@@ -73,9 +86,9 @@ Once you’ve successfully added your source, you will be presented with the Ove
 
 If you would like to run this sample, you will need 
 
-* A OneSignal account ([create one](#))
-* A Segment account ([create one](#))
-* A Mailgun account ([create one](#)))
+* A OneSignal account ([create one](https://onesignal.com/))
+* A Segment account ([create one](https://segment.com/))
+* A Mailgun account ([create one](https://www.mailgun.com/))
 * An env file named `env.local` with the variables:
     * `SEGMENT_WRITE_KEY`
     * `NEXT_PUBLIC_ONESIGNAL_APP_ID`
