@@ -78,7 +78,7 @@ Upon completion, you will have a new _destination_ configured in Segment.
 
 ![Screen Shot 2021-09-23 at 12 52 59 PM](https://user-images.githubusercontent.com/1715082/134560010-3d92fc0b-78e8-4f5b-887f-89dcb9b23ec3.png)
 
-Now that we’ve configured the Segment integration, we can add the final piece needed for this use-case: email delivery. This guide uses the OneSignal Mailgun integration to deliver email. Email setup is outside the scope of this guide; however, setup is a straightforward process and you can find instructions on integrating with Mailgun in our [docs](https://documentation.onesignal.com/docs/mailgun-setup).
+Now that we’ve configured the Segment integration, we can add the final piece needed for this use-case: email delivery. This guide uses the OneSignal Mailgun integration for mail delivery. Email setup is outside the scope of this guide however. Fortunately email setup is a straightforward process and you can find instructions for integrating with Mailgun in our [docs](https://documentation.onesignal.com/docs/mailgun-setup).
 
 ## Building this project
 
