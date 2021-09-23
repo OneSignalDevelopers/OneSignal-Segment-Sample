@@ -82,7 +82,7 @@ Now that we’ve configured the Segment integration, we can add the final piece 
 
 ## Building this project
 
-###### Prerequisites
+#### Prerequisites
 
 If you would like to run this sample, you will need 
 
@@ -94,7 +94,11 @@ If you would like to run this sample, you will need
     * `NEXT_PUBLIC_ONESIGNAL_APP_ID`
     * `NEXT_PUBLIC_ONESIGNAL_API_KEY`
 
-###### Starting the app
+#### Starting the app
 
 1. Install dependencies by running `yarn`
 2. Start the app `yarn dev`
+
+#### How to use the demo
+
+
