@@ -1,12 +1,12 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from "next";
 import Segment from "analytics-node";
+import type { NextApiRequest, NextApiResponse } from "next";
 import { SegmentWriteKey } from "../../common/constants";
-import { User, UserOnboardInfo } from "../../common/types";
+import { UserOnboardInfo } from "../../common/types";
 
 const segment = new Segment(SegmentWriteKey);
 
-export default function handler(req: NextApiRequest, res: NextApiResponse<{}>) {
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const { id, name } = req.body as UserOnboardInfo;
 
   segment.track(
@@ -15,6 +15,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<{}>) {
       event: "Onboarded",
       properties: {
         name,
+        onboarding_step: "complete",
       },
     },
     err => err && console.error(err)
