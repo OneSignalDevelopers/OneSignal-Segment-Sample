@@ -6,25 +6,28 @@ import React from "react";
 import { UserOnboardInfo } from "../../common/types";
 import styles from "../../styles/Home.module.css";
 
-// Pull id from query params
-
 const Welcome: NextPage = () => {
   const router = useRouter();
   const { uid } = router.query;
+  const id = typeof uid === "string" ? parseInt(uid, 10) : -1;
 
   const completeOnboarding = async (data: UserOnboardInfo) => {
-    await fetch("http://localhost:3000/api/onboard", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    try {
+      await fetch("http://localhost:3000/api/onboard", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-    router.push("/welcome");
+      router.push("/welcome");
+    } catch (err) {
+      console.error(err);
+    }
   };
 
-  if (typeof uid !== "string") {
+  if (id <= 0) {
     return <div>Oops</div>;
   }
 
@@ -42,11 +45,9 @@ const Welcome: NextPage = () => {
       <main className={styles.main}>
         <h1 className={styles.title}>Wubba Lubba Dub-Dub!</h1>
         <p className={styles.description}>Let&#39;s get onboarded!</p>
-        <Formik
-          initialValues={{ name: "", id: uid }}
-          onSubmit={completeOnboarding}
-        >
+        <Formik initialValues={{ name: "", id }} onSubmit={completeOnboarding}>
           <Form>
+            <label htmlFor="name">Name</label>
             <Field name="name" type="text" />
             <button type="submit">Take me to the thing!</button>
           </Form>
