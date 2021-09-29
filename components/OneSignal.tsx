@@ -1,19 +1,31 @@
-import Head from "next/head";
+import Script from "next/script";
+import { OneSignalAppId } from "../common/constants";
 
-const OneSignal = () => {
-  const scriptSrc = "https://cdn.onesignal.com/sdks/OneSignalSDK.js";
+const OneSignal = () => (
+  <>
+    <Script
+      id="onesignal-sdk"
+      src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
+      onLoad={initOneSignal}
+    />
+  </>
+);
 
-  return (
-    <Head>
-      <script
-        src={scriptSrc}
-        type="text/javascript"
-        charSet="UTF-8"
-        key="onesignal-sdk"
-        async
-      />
-    </Head>
-  );
+const initOneSignal = () => {
+  const onesignal = window.OneSignal;
+  if (!onesignal) {
+    console.warn("OneSignal SDK not loaded.");
+    return;
+  }
+
+  onesignal.init({
+    appId: OneSignalAppId,
+    allowLocalhostAsSecureOrigin: true,
+    safari_web_id: "web.onesignal.auto.424123c9-df63-4140-aac8-764c37d1fc19",
+    notifyButton: {
+      enable: true,
+    },
+  });
 };
 
 export default OneSignal;
