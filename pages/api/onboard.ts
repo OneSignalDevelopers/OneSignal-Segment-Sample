@@ -21,5 +21,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     err => err && console.error(err)
   );
 
-  return res.status(200).json({});
+  return res.status(200);
 }
