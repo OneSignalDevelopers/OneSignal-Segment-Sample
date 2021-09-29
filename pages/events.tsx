@@ -1,35 +1,23 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useRouter } from "next/router";
-import React, { useEffect } from "react";
+import React from "react";
 import OneSignal from "../components/OneSignal";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
-  const router = useRouter();
-
-  useEffect(() => {
-    // const { OneSignal } = window;
-    // OneSignal.push(() => {
-    //   OneSignal.getTags((tags: any) => console.log(tags));
-    // });
-  });
-
   const buttonClicked = async () => {
     const { OneSignal } = window;
-
     const tags = await OneSignal.getTags();
     const { clicks } = tags;
 
-    console.log(tags);
+    console.log("Tags", tags);
     const updatedClicks = clicks ? parseInt(clicks, 10) + 1 : 1;
     const tagSent = await OneSignal.sendTags({
       ...tags,
       clicks: updatedClicks,
     });
 
-    console.log(tagSent);
-    console.log("Button clicked.");
+    console.log("New tags", tagSent);
   };
 
   return (

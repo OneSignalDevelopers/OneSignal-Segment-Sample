@@ -18,13 +18,15 @@ const initOneSignal = () => {
     return;
   }
 
-  onesignal.init({
-    appId: OneSignalAppId,
-    allowLocalhostAsSecureOrigin: true,
-    safari_web_id: "web.onesignal.auto.424123c9-df63-4140-aac8-764c37d1fc19",
-    notifyButton: {
-      enable: true,
-    },
+  onesignal.push(() => {
+    onesignal.init({
+      appId: OneSignalAppId,
+      allowLocalhostAsSecureOrigin: true,
+      safari_web_id: "web.onesignal.auto.424123c9-df63-4140-aac8-764c37d1fc19",
+      notifyButton: {
+        enable: true,
+      },
+    });
   });
 };
 
