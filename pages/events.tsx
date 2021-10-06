@@ -9,15 +9,14 @@ const Home: NextPage = () => {
     const { OneSignal } = window;
     const tags = await OneSignal.getTags();
     const { clicks } = tags;
-
-    console.log("Tags", tags);
     const updatedClicks = clicks ? parseInt(clicks, 10) + 1 : 1;
     const tagSent = await OneSignal.sendTags({
       ...tags,
       clicks: updatedClicks,
     });
 
-    console.log("New tags", tagSent);
+    console.log("Tags from server", tags);
+    console.log("Tags sent to server", tagSent);
   };
 
   return (
